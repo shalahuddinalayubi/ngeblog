@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c61ff82cbf0142a401a48a8161e1595a",
+    "content-hash": "f9eac3af2709c275f41916af463b5f30",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1999,6 +1999,35 @@
                 "source": "https://github.com/nette/utils/tree/v3.2.6"
             },
             "time": "2021-11-24T15:47:23+00:00"
+        },
+        {
+            "name": "ngeblog/framework",
+            "version": "dev-framework",
+            "dist": {
+                "type": "path",
+                "url": "packages/ngeblog/framework",
+                "reference": "ff1b60d928471a1fccd3e9085184972b67eb54a5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Ngeblog\\": "src/Ngeblog/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Shalahuddin Al-Ayubi",
+                    "email": "shalahuddin69@gamil.com"
+                }
+            ],
+            "description": "The ngeblog framework",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
         },
         {
             "name": "nikic/php-parser",
@@ -7892,7 +7921,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "ngeblog/framework": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

@@ -1,0 +1,17 @@
+{
+    "name": "ngeblog/framework",
+    "description": "The ngeblog framework",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Ngeblog\\": "src/Ngeblog/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Shalahuddin Al-Ayubi",
+            "email": "shalahuddin69@gamil.com"
+        }
+    ],
+    "require": {}
+}
