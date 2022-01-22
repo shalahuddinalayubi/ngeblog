@@ -13,5 +13,12 @@
             "email": "shalahuddin69@gamil.com"
         }
     ],
-    "require": {}
+    "require": {},
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Ngeblog\\Template\\TemplateServiceProvider"
+            ]
+        }
+    }
 }
