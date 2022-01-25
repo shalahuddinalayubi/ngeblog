@@ -13,11 +13,14 @@
             "email": "shalahuddin69@gamil.com"
         }
     ],
-    "require": {},
+    "require": {
+        "laravel/ui": "^3.4"
+    },
     "extra": {
         "laravel": {
             "providers": [
-                "Ngeblog\\Template\\TemplateServiceProvider"
+                "Ngeblog\\Template\\TemplateServiceProvider",
+                "Ngeblog\\User\\UserServiceProvider"
             ]
         }
     }
