@@ -14,13 +14,15 @@
         }
     ],
     "require": {
-        "laravel/ui": "^3.4"
+        "laravel/ui": "^3.4",
+        "spatie/laravel-query-builder": "^4.0"
     },
     "extra": {
         "laravel": {
             "providers": [
                 "Ngeblog\\Template\\TemplateServiceProvider",
-                "Ngeblog\\User\\UserServiceProvider"
+                "Ngeblog\\User\\UserServiceProvider",
+                "Ngeblog\\Post\\PostServiceProvider"
             ]
         }
     }
