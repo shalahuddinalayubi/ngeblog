@@ -26,8 +26,8 @@
                 @endcan
             </div>
 
-            <p class="text-justify">
-                {{ $post->content }}
+            <p class="text-justify content">
+                {!! $post->content !!}
             </p>
         </div>
     </div>

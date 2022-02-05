@@ -18,10 +18,17 @@
                     </div>
                 @enderror
             </div>
+
+            <div id="editor"></div>
+            @error('content')
+                <div class="text-xs text-red-500">
+                    {{ $message }}
+                </div>
+            @enderror
     
-            <div class="flex flex-col py-2">
+            <div class="flex flex-col py-2 hidden">
                 <label for="content">Isi</label>
-                <textarea name="content" id="content" cols="30" rows="10" class="shadow focus:ring-2 focus:ring-blue-500 appearance-none text-sm border border-gray-300 @error('content') border-red-500 @enderror rounded-lg py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"></textarea>
+                <textarea name="content" id="content" cols="30" rows="10" class="shadow focus:ring-2 focus:ring-blue-500 appearance-none text-sm border border-gray-300 @error('content') border-red-500 @enderror rounded-lg py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">{{ old('content') }}</textarea>
                 @error('content')
                     <div class="text-xs text-red-500">
                         {{ $message }}
@@ -29,8 +36,12 @@
                 @enderror
             </div>
     
-            <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Tambah</button>
+            <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 mt-2 px-4 rounded">Tambah</button>
         </form>
     </div>
 </div>
 @endsection
+
+@push('scripts')
+    <script src="{{ asset('js/plugin/quill.js') }}"></script>
+@endpush

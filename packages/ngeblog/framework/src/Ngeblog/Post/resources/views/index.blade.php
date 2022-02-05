@@ -38,7 +38,7 @@
                         </div>
                         <a href="{{ route('posts.show', ['id' => $post->id]) }}" class="font-bold text-2xl hover:underline">{{ $post->title }}</a>
                         <p>
-                            {{ \Illuminate\Support\Str::limit($post->content, 50) }}
+                            {!! \Illuminate\Support\Str::limit($post->content, 50) !!}
                         </p>
                         <div>{{ \Carbon\Carbon::parse($post->created_at)->diffForHumans() }}</div>
                     </div>
