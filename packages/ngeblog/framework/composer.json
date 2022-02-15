@@ -15,14 +15,17 @@
     ],
     "require": {
         "laravel/ui": "^3.4",
-        "spatie/laravel-query-builder": "^4.0"
+        "spatie/laravel-query-builder": "^4.0",
+        "spatie/laravel-fractal": "^5.8",
+        "fruitcake/laravel-cors": "^2.0"
     },
     "extra": {
         "laravel": {
             "providers": [
                 "Ngeblog\\Template\\TemplateServiceProvider",
                 "Ngeblog\\User\\UserServiceProvider",
-                "Ngeblog\\Post\\PostServiceProvider"
+                "Ngeblog\\Post\\PostServiceProvider",
+                "Ngeblog\\Tag\\TagServiceProvider"
             ]
         }
     }

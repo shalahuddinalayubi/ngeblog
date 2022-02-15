@@ -50,6 +50,7 @@ class PostController extends Controller
         $data = $request->validate([
                         'title' => 'required',
                         'content' => 'required',
+                        'tags.*' => '',
                     ]);
 
         $data['user_id'] = Auth::id();
@@ -99,6 +100,7 @@ class PostController extends Controller
         $data = $request->validate([
                         'title' => 'required',
                         'content' => 'required',
+                        'tags.*' => ''
                     ]);
         
         $post = Post::findOrFail($id);

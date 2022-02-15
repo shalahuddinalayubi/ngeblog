@@ -35,6 +35,11 @@
                     </div>
                 @enderror
             </div>
+
+            <div class="flex flex-col py-2" id="app">
+                <label for="content">Tag</label>
+                <tag :old-value="{{ json_encode(old('tags')) }}"></tag>
+            </div>
     
             <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 mt-2 px-4 rounded">Tambah</button>
         </form>

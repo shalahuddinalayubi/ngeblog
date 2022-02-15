@@ -1777,9 +1777,17 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-top: 1.25rem;
   margin-bottom: 1.25rem;
 }
+.my-1{
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+}
 .my-3{
   margin-top: 0.75rem;
   margin-bottom: 0.75rem;
+}
+.mx-2{
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
 }
 .my-2{
   margin-top: 0.5rem;
@@ -1835,6 +1843,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .-ml-px{
   margin-left: -1px;
 }
+.mt-5{
+  margin-top: 1.25rem;
+}
 .mb-3{
   margin-bottom: 0.75rem;
 }
@@ -1846,9 +1857,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .mb-5{
   margin-bottom: 1.25rem;
-}
-.mt-5{
-  margin-top: 1.25rem;
 }
 .mb-6{
   margin-bottom: 1.5rem;
@@ -1974,6 +1982,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .border{
   border-width: 1px;
 }
+.border-2{
+  border-width: 2px;
+}
 .border-t{
   border-top-width: 1px;
 }
@@ -2057,6 +2068,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-left: 0.5rem;
   padding-right: 0.5rem;
 }
+.py-1{
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
 .px-5{
   padding-left: 1.25rem;
   padding-right: 1.25rem;
@@ -2101,6 +2116,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-2xl{
   font-size: 1.5rem;
   line-height: 2rem;
+}
+.text-3xl{
+  font-size: 1.875rem;
+  line-height: 2.25rem;
 }
 .text-xl{
   font-size: 1.25rem;
@@ -2259,6 +2278,13 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .ease-in-out{
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.hover\:cursor-pointer:hover{
+  cursor: pointer;
+}
+.hover\:border-gray-300:hover{
+  --tw-border-opacity: 1;
+  border-color: rgb(209 213 219 / var(--tw-border-opacity));
 }
 .hover\:bg-blue-700:hover{
   --tw-bg-opacity: 1;
@@ -2420,8 +2446,17 @@ Ensure the default browser behavior of the `hidden` attribute.
   }
 }
 @media (min-width: 768px){
+  .md\:ml-0{
+    margin-left: 0px;
+  }
   .md\:grid-cols-2{
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .md\:flex-row{
+    flex-direction: row;
+  }
+  .md\:items-center{
+    align-items: center;
   }
   .md\:border-t-0{
     border-top-width: 0px;
@@ -2432,6 +2467,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   .md\:px-0{
     padding-left: 0px;
     padding-right: 0px;
+  }
+  .md\:px-3{
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
   }
 }
 @media (min-width: 1024px){

@@ -13734,6 +13734,7 @@ var quill = new (quill__WEBPACK_IMPORTED_MODULE_0___default())('#editor', {
   theme: 'snow'
 });
 quill.on('text-change', function (delta, oldDelta, source) {
+  console.log(quill.root.innerHTML);
   document.getElementById('content').value = quill.root.innerHTML;
 });
 

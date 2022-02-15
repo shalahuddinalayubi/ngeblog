@@ -4,7 +4,7 @@
     @include('template::navbar')
 
     <div class="container mx-auto pb-5 px-2 md:px-0">
-        <div class="flex justify-center">
+        <div class="flex flex-col md:flex-row justify-center">
             <div class="w-full lg:w-1/2">
                 @if ($posts->isEmpty())    
                     <div class="bg-blue-100 border-t border-b border-blue-500 text-blue-700 px-4 py-3 mt-3" role="alert">
@@ -36,13 +36,26 @@
                                 </form>
                             @endcan
                         </div>
+
                         <a href="{{ route('posts.show', ['id' => $post->id]) }}" class="font-bold text-2xl hover:underline">{{ $post->title }}</a>
+
                         <p>
                             {!! \Illuminate\Support\Str::limit($post->content, 50) !!}
                         </p>
+
+                        <div>
+                            @foreach ($post->tags as $tag)
+                                <span class="py-1 px-2 my-1 inline-block border-2 rounded-lg text-xs">{{ $tag->name }}</span>
+                            @endforeach
+                        </div>
+
                         <div>{{ \Carbon\Carbon::parse($post->created_at)->diffForHumans() }}</div>
                     </div>
                 @endforeach
+            </div>
+
+            <div class="flex flex-col md:items-center md:px-3 my-5 w-full lg:w-1/3">
+                @tag(['tags' => \Ngeblog\Post\Models\Post::mostUsedTags()])
             </div>
         </div>
 

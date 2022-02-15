@@ -1,4 +1,5 @@
 import Alpine from 'alpinejs'
+import Vue from 'vue';
 
 window.Alpine = Alpine
 
@@ -12,7 +13,7 @@ Alpine.start()
 
 // require('./bootstrap');
 
-// window.Vue = require('vue').default;
+window.Vue = require('vue').default;
 
 /**
  * The following block of code may be used to automatically register your
@@ -26,6 +27,7 @@ Alpine.start()
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 // Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+Vue.component('tag', require('./components/Tag.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -33,6 +35,6 @@ Alpine.start()
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-// const app = new Vue({
-//     el: '#app',
-// });
+const app = new Vue({
+    el: '#app',
+});

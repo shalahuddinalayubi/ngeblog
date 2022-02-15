@@ -13,6 +13,12 @@
                 
                 <span>{{ \Carbon\Carbon::parse($post->created_at)->diffForHumans() }}</span>
 
+                <div>
+                    @foreach ($post->tags as $tag)
+                        <span class="inline-block py-1 px-2 border-2 rounded-md text-xs">{{ $tag->name }}</span>
+                    @endforeach
+                </div>
+
                 @can('update', $post)
                     <a href="{{ route('posts.edit', ['id' => $post->id]) }}" class="underline text-blue-600 hover:text-blue-800">Edit</a>
                 @endcan
