@@ -4,7 +4,7 @@
 
     @include('template::navbar')
 
-    <div class="container mx-auto flex justify-center my-5">
+    <div class="container mx-auto flex justify-center my-5" id="app">
         <div class="flex flex-col w-1/2 px-5 py-3">
             <h1 class="font-bold text-2xl my-3">{{ $post->title }}</h1>
 
@@ -35,6 +35,34 @@
             <p class="text-justify content">
                 {!! $post->content !!}
             </p>
+
+            @auth    
+                <form action="{{ route('posts.comments.store', ['post' => $post]) }}" method="POST" class="w-full py-3">
+                    @csrf
+
+                    <div class="flex py-2">
+                        <label for="content" class="mr-3">
+                            <span class="flex items-center justify-center text-center inline-block w-10 h-10 rounded-full border-2">
+                                {{ substr(Auth::user()->name, 0, 1) }}
+                            </span>
+                        </label>
+
+                        <div class="flex flex-col w-full">
+                            <textarea name="comment" id="comment" placeholder="Tambah komenter ..." class="w-full shadow focus:ring-2 focus:ring-blue-500 appearance-none text-sm border border-gray-300 @error('comment') border-red-500 @enderror rounded-lg py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">{{ old('comment') }}</textarea>
+                            @error('comment')
+                                <div class="text-xs text-red-500">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                        </div>
+                    </div>
+                    
+
+                    <button type="submit" class="w-full bg-blue-500 hover:bg-blue-700 text-white text-xs font-bold py-2 mt-2 px-4 rounded">Komentar</button>
+                </form>
+            @endauth
+
+            @commentsIndex(['commentable' => $post])
         </div>
     </div>
 @endsection

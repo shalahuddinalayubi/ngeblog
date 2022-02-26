@@ -1,0 +1,23 @@
+{
+    "name": "alayubi/laravel-comment",
+    "description": "Add comment to your Laravel app.",
+    "autoload": {
+        "psr-4": {
+            "Lara\\Comment\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Shalahuddin Al-Ayubi",
+            "email": "shalahuddin69@gmail.com"
+        }
+    ],
+    "require": {},
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Lara\\Comment\\CommentServiceProvider"
+            ]
+        }
+    }
+}

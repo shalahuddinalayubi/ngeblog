@@ -11,3 +11,6 @@ Route::put('/post/{id}', [\Ngeblog\Post\Http\Controllers\PostController::class, 
 Route::delete('/posts/{id}', [\Ngeblog\Post\Http\Controllers\PostController::class, 'destroy'])->name('posts.destroy');
 
 Route::get('/', [\Ngeblog\Post\Http\Controllers\PostController::class, 'index']);
+
+Route::post('/posts/{post}/comments', [\Ngeblog\Post\Http\Controllers\CommentController::class, 'store'])->name('posts.comments.store')->middleware('auth');
+Route::get('/posts/{post}/comments', [\Ngeblog\Post\Http\Controllers\CommentController::class, 'store'])->name('posts.comments.store')->middleware('auth');

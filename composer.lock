@@ -4,8 +4,41 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ee443ba00784c066111e0a5e5f01d918",
+    "content-hash": "f9221268d7aff87bd668df6f6fb4a2d9",
     "packages": [
+        {
+            "name": "alayubi/laravel-comment",
+            "version": "dev-develop",
+            "dist": {
+                "type": "path",
+                "url": "packages/alayubi/laravel-comment",
+                "reference": "6caee561719b21e90f01e5910432500e25c89b73"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Lara\\Comment\\CommentServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Lara\\Comment\\": "src/"
+                }
+            },
+            "authors": [
+                {
+                    "name": "Shalahuddin Al-Ayubi",
+                    "email": "shalahuddin69@gmail.com"
+                }
+            ],
+            "description": "Add comment to your Laravel app.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
         {
             "name": "alayubi/laravel-tag",
             "version": "dev-develop",
@@ -2165,7 +2198,7 @@
         },
         {
             "name": "ngeblog/framework",
-            "version": "dev-feature/tag",
+            "version": "dev-feature/comment",
             "dist": {
                 "type": "path",
                 "url": "packages/ngeblog/framework",
@@ -8311,6 +8344,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
+        "alayubi/laravel-comment": 20,
         "alayubi/laravel-tag": 20,
         "ngeblog/framework": 20
     },

@@ -4,12 +4,14 @@ namespace Ngeblog\Post\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Lara\Comment\Commentable;
+use Lara\Comment\Contracts\IsCommentable;
 use Lara\Tag\HasTags;
 use Ngeblog\Post\Database\Factories\PostFactory;
 
-class Post extends Model
+class Post extends Model implements IsCommentable
 {
-    use HasFactory, HasTags;
+    use HasFactory, HasTags, Commentable;
 
     /**
      * The attributes that are mass assignable.

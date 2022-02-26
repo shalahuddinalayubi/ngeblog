@@ -5466,6 +5466,117 @@ module.exports = {
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./packages/alayubi/laravel-comment/resources/js/components/EditComment.vue?vue&type=script&lang=js&":
+/*!***************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./packages/alayubi/laravel-comment/resources/js/components/EditComment.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  name: 'EditComment',
+  data: function data() {
+    return {
+      show: false
+    };
+  },
+  props: ['route', 'authUserName', 'action', 'csrf', 'comment']
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./packages/alayubi/laravel-comment/resources/js/components/ReplyComment.vue?vue&type=script&lang=js&":
+/*!****************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./packages/alayubi/laravel-comment/resources/js/components/ReplyComment.vue?vue&type=script&lang=js& ***!
+  \****************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  name: 'ReplyComment',
+  data: function data() {
+    return {
+      show: false
+    };
+  },
+  props: ['route', 'authUserName', 'action', 'csrf']
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Tag.vue?vue&type=script&lang=js&":
 /*!**********************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Tag.vue?vue&type=script&lang=js& ***!
@@ -5592,6 +5703,8 @@ window.Vue = (__webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js
 // Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 
 vue__WEBPACK_IMPORTED_MODULE_1__["default"].component('tag', (__webpack_require__(/*! ./components/Tag.vue */ "./resources/js/components/Tag.vue")["default"]));
+vue__WEBPACK_IMPORTED_MODULE_1__["default"].component('reply-comment', (__webpack_require__(/*! ./../../packages/alayubi/laravel-comment/resources/js/components/ReplyComment.vue */ "./packages/alayubi/laravel-comment/resources/js/components/ReplyComment.vue")["default"]));
+vue__WEBPACK_IMPORTED_MODULE_1__["default"].component('edit-comment', (__webpack_require__(/*! ./../../packages/alayubi/laravel-comment/resources/js/components/EditComment.vue */ "./packages/alayubi/laravel-comment/resources/js/components/EditComment.vue")["default"]));
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -6220,6 +6333,84 @@ module.exports = function (list, options) {
 
 /***/ }),
 
+/***/ "./packages/alayubi/laravel-comment/resources/js/components/EditComment.vue":
+/*!**********************************************************************************!*\
+  !*** ./packages/alayubi/laravel-comment/resources/js/components/EditComment.vue ***!
+  \**********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _EditComment_vue_vue_type_template_id_3b816f0a_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./EditComment.vue?vue&type=template&id=3b816f0a&scoped=true& */ "./packages/alayubi/laravel-comment/resources/js/components/EditComment.vue?vue&type=template&id=3b816f0a&scoped=true&");
+/* harmony import */ var _EditComment_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./EditComment.vue?vue&type=script&lang=js& */ "./packages/alayubi/laravel-comment/resources/js/components/EditComment.vue?vue&type=script&lang=js&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _EditComment_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _EditComment_vue_vue_type_template_id_3b816f0a_scoped_true___WEBPACK_IMPORTED_MODULE_0__.render,
+  _EditComment_vue_vue_type_template_id_3b816f0a_scoped_true___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  "3b816f0a",
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "packages/alayubi/laravel-comment/resources/js/components/EditComment.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
+/***/ "./packages/alayubi/laravel-comment/resources/js/components/ReplyComment.vue":
+/*!***********************************************************************************!*\
+  !*** ./packages/alayubi/laravel-comment/resources/js/components/ReplyComment.vue ***!
+  \***********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _ReplyComment_vue_vue_type_template_id_091371d0___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ReplyComment.vue?vue&type=template&id=091371d0& */ "./packages/alayubi/laravel-comment/resources/js/components/ReplyComment.vue?vue&type=template&id=091371d0&");
+/* harmony import */ var _ReplyComment_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ReplyComment.vue?vue&type=script&lang=js& */ "./packages/alayubi/laravel-comment/resources/js/components/ReplyComment.vue?vue&type=script&lang=js&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _ReplyComment_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _ReplyComment_vue_vue_type_template_id_091371d0___WEBPACK_IMPORTED_MODULE_0__.render,
+  _ReplyComment_vue_vue_type_template_id_091371d0___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "packages/alayubi/laravel-comment/resources/js/components/ReplyComment.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
 /***/ "./resources/js/components/Tag.vue":
 /*!*****************************************!*\
   !*** ./resources/js/components/Tag.vue ***!
@@ -6261,6 +6452,38 @@ component.options.__file = "resources/js/components/Tag.vue"
 
 /***/ }),
 
+/***/ "./packages/alayubi/laravel-comment/resources/js/components/EditComment.vue?vue&type=script&lang=js&":
+/*!***********************************************************************************************************!*\
+  !*** ./packages/alayubi/laravel-comment/resources/js/components/EditComment.vue?vue&type=script&lang=js& ***!
+  \***********************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_EditComment_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./EditComment.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./packages/alayubi/laravel-comment/resources/js/components/EditComment.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_EditComment_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./packages/alayubi/laravel-comment/resources/js/components/ReplyComment.vue?vue&type=script&lang=js&":
+/*!************************************************************************************************************!*\
+  !*** ./packages/alayubi/laravel-comment/resources/js/components/ReplyComment.vue?vue&type=script&lang=js& ***!
+  \************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ReplyComment_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./ReplyComment.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./packages/alayubi/laravel-comment/resources/js/components/ReplyComment.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ReplyComment_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
 /***/ "./resources/js/components/Tag.vue?vue&type=script&lang=js&":
 /*!******************************************************************!*\
   !*** ./resources/js/components/Tag.vue?vue&type=script&lang=js& ***!
@@ -6290,6 +6513,40 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./packages/alayubi/laravel-comment/resources/js/components/EditComment.vue?vue&type=template&id=3b816f0a&scoped=true&":
+/*!*****************************************************************************************************************************!*\
+  !*** ./packages/alayubi/laravel-comment/resources/js/components/EditComment.vue?vue&type=template&id=3b816f0a&scoped=true& ***!
+  \*****************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_EditComment_vue_vue_type_template_id_3b816f0a_scoped_true___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_EditComment_vue_vue_type_template_id_3b816f0a_scoped_true___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_EditComment_vue_vue_type_template_id_3b816f0a_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./EditComment.vue?vue&type=template&id=3b816f0a&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./packages/alayubi/laravel-comment/resources/js/components/EditComment.vue?vue&type=template&id=3b816f0a&scoped=true&");
+
+
+/***/ }),
+
+/***/ "./packages/alayubi/laravel-comment/resources/js/components/ReplyComment.vue?vue&type=template&id=091371d0&":
+/*!******************************************************************************************************************!*\
+  !*** ./packages/alayubi/laravel-comment/resources/js/components/ReplyComment.vue?vue&type=template&id=091371d0& ***!
+  \******************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ReplyComment_vue_vue_type_template_id_091371d0___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ReplyComment_vue_vue_type_template_id_091371d0___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ReplyComment_vue_vue_type_template_id_091371d0___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./ReplyComment.vue?vue&type=template&id=091371d0& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./packages/alayubi/laravel-comment/resources/js/components/ReplyComment.vue?vue&type=template&id=091371d0&");
+
+
+/***/ }),
+
 /***/ "./resources/js/components/Tag.vue?vue&type=template&id=8d320b02&":
 /*!************************************************************************!*\
   !*** ./resources/js/components/Tag.vue?vue&type=template&id=8d320b02& ***!
@@ -6303,6 +6560,232 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Tag_vue_vue_type_template_id_8d320b02___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
 /* harmony export */ });
 /* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Tag_vue_vue_type_template_id_8d320b02___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Tag.vue?vue&type=template&id=8d320b02& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Tag.vue?vue&type=template&id=8d320b02&");
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./packages/alayubi/laravel-comment/resources/js/components/EditComment.vue?vue&type=template&id=3b816f0a&scoped=true&":
+/*!********************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./packages/alayubi/laravel-comment/resources/js/components/EditComment.vue?vue&type=template&id=3b816f0a&scoped=true& ***!
+  \********************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function () {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c(
+      "div",
+      {
+        staticClass: "text-xs mb-1 hover:cursor-pointer hover:underline",
+        on: {
+          click: function ($event) {
+            _vm.show = !_vm.show
+          },
+        },
+      },
+      [_vm._v("Edit")]
+    ),
+    _vm._v(" "),
+    _c(
+      "form",
+      {
+        directives: [
+          {
+            name: "show",
+            rawName: "v-show",
+            value: _vm.show,
+            expression: "show",
+          },
+        ],
+        staticClass: "w-full py-3",
+        attrs: { action: _vm.action, method: "POST" },
+      },
+      [
+        _c("input", {
+          attrs: { type: "hidden", name: "_token" },
+          domProps: { value: _vm.csrf },
+        }),
+        _vm._v(" "),
+        _c("input", {
+          attrs: { type: "hidden", name: "_method", value: "PUT" },
+        }),
+        _vm._v(" "),
+        _c("div", { staticClass: "flex py-2" }, [
+          _c("label", { staticClass: "mr-3", attrs: { for: "content" } }, [
+            _c(
+              "span",
+              {
+                staticClass:
+                  "flex items-center justify-center text-center inline-block w-10 h-10 rounded-full border-2",
+              },
+              [
+                _vm._v(
+                  "\n                    " +
+                    _vm._s(_vm.authUserName.substring(0, 1)) +
+                    "\n                "
+                ),
+              ]
+            ),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "flex flex-col w-full" }, [
+            _c("textarea", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.comment,
+                  expression: "comment",
+                },
+              ],
+              staticClass:
+                "w-full shadow focus:ring-2 focus:ring-blue-500 appearance-none text-sm border border-gray-300 rounded-lg py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline",
+              attrs: { name: "comment", id: "comment", placeholder: "" },
+              domProps: { value: _vm.comment },
+              on: {
+                input: function ($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.comment = $event.target.value
+                },
+              },
+            }),
+          ]),
+        ]),
+        _vm._v(" "),
+        _c(
+          "button",
+          {
+            staticClass:
+              "w-full bg-blue-500 hover:bg-blue-700 text-white text-xs font-bold py-2 mt-2 px-4 rounded",
+            attrs: { type: "submit" },
+          },
+          [_vm._v("Update")]
+        ),
+      ]
+    ),
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./packages/alayubi/laravel-comment/resources/js/components/ReplyComment.vue?vue&type=template&id=091371d0&":
+/*!*********************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./packages/alayubi/laravel-comment/resources/js/components/ReplyComment.vue?vue&type=template&id=091371d0& ***!
+  \*********************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function () {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c(
+      "div",
+      {
+        staticClass: "text-xs mb-1 hover:cursor-pointer hover:underline",
+        on: {
+          click: function ($event) {
+            _vm.show = !_vm.show
+          },
+        },
+      },
+      [_vm._v("Reply")]
+    ),
+    _vm._v(" "),
+    _c(
+      "form",
+      {
+        directives: [
+          {
+            name: "show",
+            rawName: "v-show",
+            value: _vm.show,
+            expression: "show",
+          },
+        ],
+        staticClass: "w-full py-3",
+        attrs: { action: _vm.action, method: "POST" },
+      },
+      [
+        _c("input", {
+          attrs: { type: "hidden", name: "_token" },
+          domProps: { value: _vm.csrf },
+        }),
+        _vm._v(" "),
+        _c("div", { staticClass: "flex py-2" }, [
+          _c("label", { staticClass: "mr-3", attrs: { for: "content" } }, [
+            _c(
+              "span",
+              {
+                staticClass:
+                  "flex items-center justify-center text-center inline-block w-10 h-10 rounded-full border-2",
+              },
+              [
+                _vm._v(
+                  "\n                    " +
+                    _vm._s(_vm.authUserName.substring(0, 1)) +
+                    "\n                "
+                ),
+              ]
+            ),
+          ]),
+          _vm._v(" "),
+          _vm._m(0),
+        ]),
+        _vm._v(" "),
+        _c(
+          "button",
+          {
+            staticClass:
+              "w-full bg-blue-500 hover:bg-blue-700 text-white text-xs font-bold py-2 mt-2 px-4 rounded",
+            attrs: { type: "submit" },
+          },
+          [_vm._v("Komentar")]
+        ),
+      ]
+    ),
+  ])
+}
+var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "flex flex-col w-full" }, [
+      _c("textarea", {
+        staticClass:
+          "w-full shadow focus:ring-2 focus:ring-blue-500 appearance-none text-sm border border-gray-300 rounded-lg py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline",
+        attrs: {
+          name: "comment",
+          id: "comment",
+          placeholder: "Tambah komenter ...",
+        },
+      }),
+    ])
+  },
+]
+render._withStripped = true
+
 
 
 /***/ }),

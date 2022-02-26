@@ -6,6 +6,7 @@
     "license": "MIT",
     "require": {
         "php": "^7.3|^8.0",
+        "alayubi/laravel-comment": "dev-develop",
         "alayubi/laravel-tag": "dev-develop",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
@@ -33,6 +34,13 @@
         "laravel-tags": {
             "type": "path",
             "url": "packages/alayubi/laravel-tag",
+            "options": {
+                "symlink": true
+            }
+        },
+        "laravel-comment": {
+            "type": "path",
+            "url": "packages/alayubi/laravel-comment",
             "options": {
                 "symlink": true
             }
