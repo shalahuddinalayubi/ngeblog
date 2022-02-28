@@ -2,7 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/home', [\Ngeblog\User\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/login', [\Ngeblog\User\Http\Controllers\Auth\LoginController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [\Ngeblog\User\Http\Controllers\Auth\LoginController::class, 'login']);
 Route::post('/logout', [\Ngeblog\User\Http\Controllers\Auth\LoginController::class, 'logout'])->name('logout');
