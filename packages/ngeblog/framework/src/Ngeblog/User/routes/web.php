@@ -17,3 +17,8 @@ Route::put('password', [\Ngeblog\User\Http\Controllers\User\ChangePasswordContro
 
 Route::get('profile/edit', [\Ngeblog\User\Http\Controllers\User\ChangeProfileController::class, 'edit'])->name('profile.edit');
 Route::put('profile', [\Ngeblog\User\Http\Controllers\User\ChangeProfileController::class, 'update'])->name('profile.update');
+
+Route::controller(\Ngeblog\User\Http\Controllers\User\RegisterController::class)->group(function () {
+    Route::get('register', 'showRegistrationForm')->name('register');
+    Route::post('register', 'register');
+});
