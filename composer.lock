@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f9221268d7aff87bd668df6f6fb4a2d9",
+    "content-hash": "560a9b02c3f62cc5fe2990e6003b69a4",
     "packages": [
         {
             "name": "alayubi/laravel-comment",
@@ -12,7 +12,7 @@
             "dist": {
                 "type": "path",
                 "url": "packages/alayubi/laravel-comment",
-                "reference": "6caee561719b21e90f01e5910432500e25c89b73"
+                "reference": "e82688951723fde0e356331384cbdc7f4c29b101"
             },
             "type": "library",
             "extra": {
@@ -45,7 +45,7 @@
             "dist": {
                 "type": "path",
                 "url": "packages/alayubi/laravel-tag",
-                "reference": "990a8d86751e91708b49ad884c80b279cce7d323"
+                "reference": "fd3055a43af46f9d3fdd8431b0d596319f5b7e29"
             },
             "type": "library",
             "extra": {
@@ -1392,16 +1392,16 @@
         },
         {
             "name": "laravel/ui",
-            "version": "v3.4.1",
+            "version": "v3.4.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/ui.git",
-                "reference": "9a1e52442dd238647905b98d773d59e438eb9f9d"
+                "reference": "e01198123f7f4369d13c1f83a897c3f5e97fc9f4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/ui/zipball/9a1e52442dd238647905b98d773d59e438eb9f9d",
-                "reference": "9a1e52442dd238647905b98d773d59e438eb9f9d",
+                "url": "https://api.github.com/repos/laravel/ui/zipball/e01198123f7f4369d13c1f83a897c3f5e97fc9f4",
+                "reference": "e01198123f7f4369d13c1f83a897c3f5e97fc9f4",
                 "shasum": ""
             },
             "require": {
@@ -1447,9 +1447,9 @@
                 "ui"
             ],
             "support": {
-                "source": "https://github.com/laravel/ui/tree/v3.4.1"
+                "source": "https://github.com/laravel/ui/tree/v3.4.2"
             },
-            "time": "2021-12-22T10:40:50+00:00"
+            "time": "2022-01-25T20:15:56+00:00"
         },
         {
             "name": "league/commonmark",
@@ -2197,12 +2197,12 @@
             "time": "2021-11-24T15:47:23+00:00"
         },
         {
-            "name": "ngeblog/framework",
-            "version": "dev-feature/comment",
+            "name": "ngeblog/app",
+            "version": "dev-develop",
             "dist": {
                 "type": "path",
-                "url": "packages/ngeblog/framework",
-                "reference": "02e7ca23998dea4270a1bec9b5e31f582baeb8ac"
+                "url": "packages/ngeblog/app",
+                "reference": "74e3ff5cb6b12f8a048ed9c20cac2832c50fc6dc"
             },
             "require": {
                 "fruitcake/laravel-cors": "^2.0",
@@ -3185,12 +3185,12 @@
                 }
             },
             "autoload": {
-                "psr-4": {
-                    "Spatie\\Fractal\\": "src"
-                },
                 "files": [
                     "src/helpers.php"
-                ]
+                ],
+                "psr-4": {
+                    "Spatie\\Fractal\\": "src"
+                }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -8346,7 +8346,7 @@
     "stability-flags": {
         "alayubi/laravel-comment": 20,
         "alayubi/laravel-tag": 20,
-        "ngeblog/framework": 20
+        "ngeblog/app": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,

@@ -1,5 +1,5 @@
 {
-    "name": "ngeblog/framework",
+    "name": "ngeblog/app",
     "description": "The ngeblog framework",
     "license": "MIT",
     "autoload": {
