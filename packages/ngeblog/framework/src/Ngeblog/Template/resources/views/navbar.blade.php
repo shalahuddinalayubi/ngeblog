@@ -3,6 +3,7 @@
         <div class="flex">
             @guest
                 <a href="{{ route('login') }}" class="block px-5 py-2 mr-2 rounded-lg bg-blue-500 hover:bg-blue-700 text-white">Login</a>
+                <a href="{{ route('register') }}" class="block px-5 py-2 mr-2 rounded-lg bg-blue-500 hover:bg-blue-700 text-white">Register</a>
             @endguest
 
             @auth    
