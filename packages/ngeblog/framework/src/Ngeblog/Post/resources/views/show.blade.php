@@ -32,9 +32,9 @@
                 @endcan
             </div>
 
-            <p class="text-justify content">
+            <article class="prose">
                 {!! $post->content !!}
-            </p>
+            </article>
 
             @auth    
                 <form action="{{ route('posts.comments.store', ['post' => $post]) }}" method="POST" class="w-full py-3">
