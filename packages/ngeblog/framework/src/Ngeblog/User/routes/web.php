@@ -2,7 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/home', [\Ngeblog\User\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/login', [\Ngeblog\User\Http\Controllers\Auth\LoginController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [\Ngeblog\User\Http\Controllers\Auth\LoginController::class, 'login']);
 Route::post('/logout', [\Ngeblog\User\Http\Controllers\Auth\LoginController::class, 'logout'])->name('logout');
@@ -17,3 +16,8 @@ Route::put('password', [\Ngeblog\User\Http\Controllers\User\ChangePasswordContro
 
 Route::get('profile/edit', [\Ngeblog\User\Http\Controllers\User\ChangeProfileController::class, 'edit'])->name('profile.edit');
 Route::put('profile', [\Ngeblog\User\Http\Controllers\User\ChangeProfileController::class, 'update'])->name('profile.update');
+
+Route::controller(\Ngeblog\User\Http\Controllers\User\RegisterController::class)->group(function () {
+    Route::get('register', 'showRegistrationForm')->name('register');
+    Route::post('register', 'register');
+});
