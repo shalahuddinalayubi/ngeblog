@@ -37,7 +37,7 @@ class PostServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
         
-        $this->loadMigrationsFrom(__DIR__.'/database/migrations');
+        $this->loadMigrationsFrom(__DIR__.'/Database/migrations');
 
         $this->loadViewsFrom(__DIR__.'/resources/views', 'post');
 
