@@ -5,7 +5,7 @@
     @include('template::navbar')
 
     <div class="container mx-auto flex justify-center my-5" id="app">
-        <div class="flex flex-col w-1/2 px-5 py-3">
+        <div class="flex flex-col w-full md:w-1/2 px-5 py-3">
             <h1 class="font-bold text-2xl my-3">{{ $post->title }}</h1>
 
             <div class="py-3">
