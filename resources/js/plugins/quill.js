@@ -5,7 +5,6 @@ var quill = new Quill('#editor', {
 })
 
 quill.on('text-change', (delta, oldDelta, source) => {
-    console.log(quill.root.innerHTML)
     document.getElementById('content').value = quill.root.innerHTML
 })
 
