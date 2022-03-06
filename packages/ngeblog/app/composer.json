@@ -1,0 +1,32 @@
+{
+    "name": "ngeblog/app",
+    "description": "The ngeblog framework",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Ngeblog\\": "src/Ngeblog/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Shalahuddin Al-Ayubi",
+            "email": "shalahuddin69@gamil.com"
+        }
+    ],
+    "require": {
+        "laravel/ui": "^3.4",
+        "spatie/laravel-query-builder": "^4.0",
+        "spatie/laravel-fractal": "^5.8",
+        "fruitcake/laravel-cors": "^2.0"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Ngeblog\\Template\\TemplateServiceProvider",
+                "Ngeblog\\User\\UserServiceProvider",
+                "Ngeblog\\Post\\PostServiceProvider",
+                "Ngeblog\\Tag\\TagServiceProvider"
+            ]
+        }
+    }
+}
