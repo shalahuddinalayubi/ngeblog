@@ -40,6 +40,7 @@ class CommentController extends Controller
     {
         CommentService::for($comment, $request)
             ->setCommentator(Auth::user())
+            ->validateWithBag()
             ->store();
 
         return redirect()->back();
@@ -80,6 +81,7 @@ class CommentController extends Controller
 
         CommentService::for($comment, $request)
             ->setCommentator(Auth::user())
+            ->validateWithBag()
             ->update();
 
         return redirect()->back();

@@ -19,13 +19,12 @@
                         id="comment"
                         placeholder=""
                         class="w-full shadow focus:ring-2 focus:ring-blue-500 appearance-none text-sm border border-gray-300 rounded-lg py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                        v-model="comment"
+                        :class="{ 'border-red-500': errorMessage }"
+                        v-model="commentValue"
                     ></textarea>
-                    <!-- @error('comment')
-                        <div class="text-xs text-red-500">
-                            {{ $message }}
-                        </div>
-                    @enderror -->
+                    <div class="text-xs text-red-500" v-if="errorMessage">
+                        {{ errorMessage }}
+                    </div>
                 </div>
             </div>
             
@@ -40,7 +39,16 @@ export default {
 
     data() {
         return {
-            show: false
+            show: false,
+            commentValue: this.comment
+        }
+    },
+
+    methods: {
+        showOnError () {
+            if (this.errorMessage) {
+                this.show = true
+            }
         }
     },
 
@@ -49,8 +57,19 @@ export default {
         'authUserName',
         'action',
         'csrf',
-        'comment'
-    ]
+        'comment',
+        'errorMessage'
+    ],
+
+    watch: {
+        comment (newValue) {
+            this.commentValue = newValue
+        }
+    },
+
+    created() {
+        this.showOnError()
+    }
 }
 </script>
 

@@ -18,6 +18,7 @@
                     action={{ route('comments.update', ['comment' => $comment]) }}
                     auth-user-name={{ Auth::user()->name }}
                     csrf={{ csrf_token() }}
+                    error-message="{{ $errors->{$comment->id . 'PUT'}->first('comment') }}"
                 >
                 </edit-comment>
             @endcan
@@ -27,6 +28,7 @@
                     action={{ route('comments.comments.store', ['comment' => $comment]) }}
                     auth-user-name={{ Auth::user()->name }}
                     csrf={{ csrf_token() }}
+                    error-message="{{ $errors->{$comment->id . 'POST'}->first('comment') }}"
                 >
                 </reply-comment>
             @endauth

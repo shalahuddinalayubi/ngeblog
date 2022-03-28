@@ -13,12 +13,16 @@
                 </label>
 
                 <div class="flex flex-col w-full">
-                    <textarea name="comment" id="comment" placeholder="Tambah komenter ..." class="w-full shadow focus:ring-2 focus:ring-blue-500 appearance-none text-sm border border-gray-300 rounded-lg py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"></textarea>
-                    <!-- @error('comment')
-                        <div class="text-xs text-red-500">
-                            {{ $message }}
-                        </div>
-                    @enderror -->
+                    <textarea
+                        name="comment"
+                        id="comment"
+                        placeholder="Tambah komenter ..."
+                        class="w-full shadow focus:ring-2 focus:ring-blue-500 appearance-none text-sm border border-gray-300 rounded-lg py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                        :class="{ 'border-red-500': errorMessage }"
+                    ></textarea>
+                    <div class="text-xs text-red-500" v-if="errorMessage">
+                        {{ errorMessage }}
+                    </div>
                 </div>
             </div>
             
@@ -37,11 +41,24 @@
             }
         },
 
+        methods: {
+            showOnError () {
+                if (this.errorMessage) {
+                    this.show = true
+                }
+            }
+        },
+
         props: [
             'route',
             'authUserName',
             'action',
-            'csrf'
-        ]
+            'csrf',
+            'errorMessage'
+        ],
+
+        created() {
+            this.showOnError()
+        }
     }
 </script>

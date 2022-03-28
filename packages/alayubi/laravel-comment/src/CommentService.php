@@ -26,6 +26,11 @@ class CommentService
      */
     protected $commentator;
 
+    /**
+     * @var bool
+     */
+    protected $validateWithBag = false;
+
     public function __construct($commentable, $request)
     {
         $this->setCommentable($commentable);
@@ -99,7 +104,30 @@ class CommentService
             'comment' => 'required',
         ]);
 
-        return $validator->validated();
+        return $this->validateWithBag ? $validator->validateWithBag($this->errorBag()) : $validator->validated();
+    }
+
+    /**
+     * Run validation with error bag.
+     * 
+     * @param bool $validateWithBag
+     * @return this
+     */
+    public function validateWithBag($validateWithBag = true)
+    {
+        $this->validateWithBag = $validateWithBag;
+
+        return $this;
+    }
+
+    /**
+     * Make string error bag.
+     * 
+     * @return string
+     */
+    protected function errorBag()
+    {
+        return (string) $this->commentable->id . $this->request->method();
     }
 
     /**
