@@ -3,7 +3,9 @@
 namespace Lara\Comment;
 
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\ValidationException;
 use Lara\Comment\Contracts\IsCommentable;
 use Lara\Comment\Exceptions\MustCommentableException;
 
@@ -25,6 +27,11 @@ class CommentService
      * @var \Illuminate\Database\Eloquent\Model
      */
     protected $commentator;
+
+    /**
+     * @var \Lara\Comment\Redirect\Redirect
+     */
+    protected $redirector;
 
     /**
      * @var bool
@@ -104,7 +111,26 @@ class CommentService
             'comment' => 'required',
         ]);
 
+        $this->setRedirector($validator);
+
+        $validator->setException($this->redirector->getValidationException());
+
         return $this->validateWithBag ? $validator->validateWithBag($this->errorBag()) : $validator->validated();
+    }
+
+    /**
+     * Set redirector.
+     * 
+     * @param \Illuminate\Validation\Validator $validator
+     * @return $this
+     */
+    public function setRedirector($validator)
+    {
+        $redirector = config('comment.redirector');
+
+        $this->redirector = new $redirector($validator);
+
+        return $this;
     }
 
     /**

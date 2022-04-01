@@ -40,6 +40,8 @@ class CommentServiceProvider extends ServiceProvider
 
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'comment');
 
+        $this->mergeConfigFrom(__DIR__.'/../config/comment.php', 'comment');
+
         Route::group(['middleware' => ['web']], function () {
             $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
         });

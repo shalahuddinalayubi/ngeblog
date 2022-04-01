@@ -2,6 +2,8 @@
     <div>
         <div class="text-xs mb-1 hover:cursor-pointer hover:underline" @click="show = !show">Reply</div>
 
+        <span v-if="errorMessage" id="validation-comment-fails"></span>
+
         <form :action="action" method="POST" class="w-full py-3" v-show="show">
             <input type="hidden" name="_token" :value="csrf">
 
