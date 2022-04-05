@@ -3,6 +3,7 @@
 namespace Lara\Comment;
 
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+use Illuminate\Http\Request;
 use Lara\Comment\Contracts\IsCommentable;
 use Lara\Comment\Contracts\IsCommentator;
 use Lara\Comment\Exceptions\MustCommentableException;
@@ -31,10 +32,11 @@ class CommentService
      */
     protected $validateWithBag = false;
 
-    public function __construct($commentable, $request)
+    public function __construct($commentable, $commentator, ?Request $request = null)
     {
         $this->setCommentable($commentable);
-        $this->request = $request;
+        $this->setCommentator($commentator);
+        $this->request = $request ?? app(Request::class);
     }
 
     /**
@@ -58,12 +60,13 @@ class CommentService
      * Create new instace.
      * 
      * @param \Illuminate\Database\Eloquent\Model
+     * @param \Illuminate\Database\Eloquent\Model
      * @param \Illuminate\Http\Request
      * @return this
      */
-    public static function for($commentable, $request)
+    public static function for($commentable, $commentator, ?Request $request = null)
     {
-        return (new self($commentable, $request));
+        return (new self($commentable, $commentator, $request));
     }
 
     /**

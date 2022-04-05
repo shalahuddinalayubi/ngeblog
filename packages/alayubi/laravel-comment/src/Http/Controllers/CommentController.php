@@ -3,7 +3,6 @@
 namespace Lara\Comment\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Lara\Comment\Comment;
 use Lara\Comment\CommentService;
@@ -36,10 +35,9 @@ class CommentController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, Comment $comment)
+    public function store(Comment $comment)
     {
-        CommentService::for($comment, $request)
-            ->setCommentator(Auth::user())
+        CommentService::for($comment, Auth::user())
             ->validateWithBag()
             ->store();
 
@@ -75,12 +73,11 @@ class CommentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update($id)
     {
         $comment = Comment::findOrFail($id);
 
-        CommentService::for($comment, $request)
-            ->setCommentator(Auth::user())
+        CommentService::for($comment, Auth::user())
             ->validateWithBag()
             ->update();
 
@@ -97,7 +94,7 @@ class CommentController extends Controller
     {
         $comment = Comment::findOrFail($id);
 
-        CommentService::for($comment, request())
+        CommentService::for($comment, Auth::user())
             ->setCommentator(Auth::user())
             ->destroy();
 
