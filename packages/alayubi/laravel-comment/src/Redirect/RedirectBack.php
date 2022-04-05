@@ -13,6 +13,6 @@ class RedirectBack extends Redirect
      */
     public function redirectTo()
     {
-        return URL::previous() . '#validation-comment-fails';
+        return URL::previous();
     }
 }
