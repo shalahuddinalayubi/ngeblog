@@ -4,6 +4,7 @@ namespace Lara\Comment;
 
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Lara\Comment\Contracts\IsCommentable;
+use Lara\Comment\Contracts\IsCommentator;
 use Lara\Comment\Exceptions\MustCommentableException;
 
 class CommentService
@@ -71,8 +72,12 @@ class CommentService
      * @param \Illuminate\Database\Eloquent\Model
      * @return this
      */
-    public function setCommentator($commentator)
+    public function setCommentator(\Illuminate\Database\Eloquent\Model $commentator)
     {
+        if (!$commentator instanceof IsCommentator) {
+            throw new \Exception('The model should implements \Lara\Comment\Contracts\IsCommentator interface');
+        }
+
         $this->commentator = $commentator;
 
         return $this;
