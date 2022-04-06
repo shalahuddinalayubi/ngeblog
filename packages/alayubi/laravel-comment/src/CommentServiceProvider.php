@@ -49,5 +49,21 @@ class CommentServiceProvider extends ServiceProvider
         }
 
         Blade::include('comment::comments.index', 'commentsIndex');
+
+        $this->publishes([
+            __DIR__.'/../config/comment.php' => config_path('comment.php')
+        ], 'lara-comment-config');
+
+        $this->publishes([
+            __DIR__.'/../database/migrations/' => database_path('migration')
+        ], 'lara-comment-migrations');
+
+        $this->publishes([
+            __DIR__.'/../resources/views/' => resource_path('views/vendor/comment')
+        ], 'lara-comment-views');
+
+        $this->publishes([
+            __DIR__.'/../resources/js/components/' => resource_path('js/components/comment')
+        ], 'lara-comment-components');
     }
 }
