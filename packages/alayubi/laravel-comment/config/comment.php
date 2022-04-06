@@ -11,4 +11,9 @@ return [
      * This option controll how to validate the comment data.
      */
     'validator' => \Lara\Comment\Validation\DefaultValidator::class,
+
+    /**
+     * This option determine route to comment on a comment.
+     */
+    'route' => true,
 ];

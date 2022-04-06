@@ -42,9 +42,11 @@ class CommentServiceProvider extends ServiceProvider
 
         $this->mergeConfigFrom(__DIR__.'/../config/comment.php', 'comment');
 
-        Route::group(['middleware' => ['web']], function () {
-            $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
-        });
+        if (config('comment.route')) {
+            Route::group(['middleware' => ['web']], function () {
+                $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
+            });
+        }
 
         Blade::include('comment::comments.index', 'commentsIndex');
     }
