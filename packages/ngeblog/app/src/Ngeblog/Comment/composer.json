@@ -1,0 +1,17 @@
+{
+    "name": "ngeblog/comment",
+    "autoload": {
+        "psr-4": {
+            "Ngeblog\\Comment\\": "",
+            "Database\\Factories\\": "database/factories/",
+            "Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Shalahuddin Al-Ayubi",
+            "email": "shalahuddin69@gmail.com"
+        }
+    ],
+    "require": {}
+}

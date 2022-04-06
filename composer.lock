@@ -2202,7 +2202,7 @@
             "dist": {
                 "type": "path",
                 "url": "packages/ngeblog/app",
-                "reference": "74e3ff5cb6b12f8a048ed9c20cac2832c50fc6dc"
+                "reference": "cc65a56c0f717f2fe1690a5952d4a3563cd27257"
             },
             "require": {
                 "fruitcake/laravel-cors": "^2.0",
@@ -2217,7 +2217,8 @@
                         "Ngeblog\\Template\\TemplateServiceProvider",
                         "Ngeblog\\User\\UserServiceProvider",
                         "Ngeblog\\Post\\PostServiceProvider",
-                        "Ngeblog\\Tag\\TagServiceProvider"
+                        "Ngeblog\\Tag\\TagServiceProvider",
+                        "Ngeblog\\Comment\\CommentServiceProvider"
                     ]
                 }
             },
