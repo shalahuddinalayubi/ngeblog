@@ -55,7 +55,7 @@ class CommentServiceProvider extends ServiceProvider
         ], 'lara-comment-config');
 
         $this->publishes([
-            __DIR__.'/../database/migrations/' => database_path('migration')
+            __DIR__.'/../database/migrations/' => database_path('migrations')
         ], 'lara-comment-migrations');
 
         $this->publishes([
