@@ -36,7 +36,7 @@ class CommentServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        $this->loadViewsFrom(__DIR__.'/../resources/views', 'comment');
+        // $this->loadViewsFrom(__DIR__.'/../resources/views', 'comment');
 
         $this->mergeConfigFrom(__DIR__.'/../config/comment.php', 'comment');
 
@@ -46,7 +46,7 @@ class CommentServiceProvider extends ServiceProvider
             });
         }
 
-        Blade::include('comment::comments.index', 'commentsIndex');
+        // Blade::include('comment::comments.index', 'commentsIndex');
 
         $this->publishes([
             __DIR__.'/../config/comment.php' => config_path('comment.php')
@@ -57,8 +57,9 @@ class CommentServiceProvider extends ServiceProvider
         ], 'lara-comment-migrations');
 
         $this->publishes([
-            __DIR__.'/../resources/views/' => resource_path('views/vendor/comment')
-        ], 'lara-comment-views');
+            __DIR__.'/../resources/views/' => resource_path('views/vendor/comment'),
+            __DIR__.'/../resources/js/components/' => resource_path('js/components/comment'),
+        ], 'lara-comment-vue');
 
         $this->publishes([
             __DIR__.'/../resources/js/components/' => resource_path('js/components/comment')

@@ -16,4 +16,6 @@ return [
      * This option determine route to comment on a comment.
      */
     'route' => true,
+
+    'indentation' => 1
 ];

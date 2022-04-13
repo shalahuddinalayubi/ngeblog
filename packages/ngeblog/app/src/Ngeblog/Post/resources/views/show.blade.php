@@ -62,7 +62,9 @@
                 </form>
             @endauth
 
-            @commentsIndex(['commentable' => $post])
+            {{-- @commentsIndex(['commentable' => $post]) --}}
+
+            @include('comment::comment-list', ['commentable' => $post])
         </div>
     </div>
 @endsection
