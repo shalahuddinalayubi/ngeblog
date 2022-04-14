@@ -37,7 +37,7 @@
             </article>
 
             @auth    
-                <form action="{{ route('posts.comments.store', ['post' => $post]) }}" method="POST" class="w-full py-3">
+                <form action="{{ route('posts.comments.store', ['post' => $post]) }}" method="POST" class="w-full py-3" @error('comment') id="validation-comment-fails" @enderror>
                     @csrf
 
                     <div class="flex py-2">
@@ -50,7 +50,7 @@
                         <div class="flex flex-col w-full">
                             <textarea name="comment" id="comment" placeholder="Tambah komenter ..." class="w-full shadow focus:ring-2 focus:ring-blue-500 appearance-none text-sm border border-gray-300 @error('comment') border-red-500 @enderror rounded-lg py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">{{ old('comment') }}</textarea>
                             @error('comment')
-                                <div class="text-xs text-red-500" id="validation-comment-fails">
+                                <div class="text-xs text-red-500">
                                     {{ $message }}
                                 </div>
                             @enderror
