@@ -9,6 +9,6 @@ trait Commentable
      */
     public function comments()
     {
-        return $this->morphMany(\Lara\Comment\Comment::class, 'commentable');
+        return $this->morphMany(config('comment.comment'), 'commentable');
     }
 }

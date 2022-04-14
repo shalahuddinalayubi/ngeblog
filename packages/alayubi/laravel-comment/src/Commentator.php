@@ -9,6 +9,6 @@ trait Commentator
      */
     public function comments()
     {
-        return $this->hasMany(\Lara\Comment\Comment::class);
+        return $this->hasMany(config('comment.comment'));
     }
 }

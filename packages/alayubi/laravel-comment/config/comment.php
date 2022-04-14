@@ -22,4 +22,14 @@ return [
      * The value must be greater than or equal 0.
      */
     'indentation' => 1,
+
+    /**
+     * The class model responsible for the owner of a comment.
+     */
+    'commentator' => \App\Models\User::class,
+
+    /**
+     * The class model for comment.
+     */
+    'comment' => \Lara\Comment\Comment::class,
 ];
