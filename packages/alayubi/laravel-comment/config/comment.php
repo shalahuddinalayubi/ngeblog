@@ -17,5 +17,9 @@ return [
      */
     'route' => true,
 
-    'indentation' => 1
+    /**
+     * The indentation of a comment.
+     * The value must be greater than or equal 0.
+     */
+    'indentation' => 1,
 ];
