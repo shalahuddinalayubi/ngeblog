@@ -32,4 +32,9 @@ return [
      * The class model for comment.
      */
     'comment' => \Lara\Comment\Comment::class,
+
+    /**
+     * The policy class.
+     */
+    'policy' => \Lara\Comment\CommentPolicy::class,
 ];

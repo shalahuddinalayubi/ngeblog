@@ -13,9 +13,7 @@ class CommentServiceProvider extends ServiceProvider
      *
      * @var array
      */
-    protected $policies = [
-        Comment::class => CommentPolicy::class
-    ];
+    protected $policies = [];
 
     /**
      * Register services.
@@ -34,11 +32,11 @@ class CommentServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->registerPolicies();
-
         // $this->loadViewsFrom(__DIR__.'/../resources/views', 'comment');
 
         $this->mergeConfigFrom(__DIR__.'/../config/comment.php', 'comment');
+
+        $this->setPolicies();
 
         if (config('comment.route')) {
             Route::group(['middleware' => ['web']], function () {
@@ -64,5 +62,12 @@ class CommentServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__.'/../resources/js/components/' => resource_path('js/components/comment')
         ], 'lara-comment-components');
+    }
+
+    public function setPolicies()
+    {
+        $this->policies[config('comment.comment')] = config('comment.policy');
+
+        $this->registerPolicies();
     }
 }
