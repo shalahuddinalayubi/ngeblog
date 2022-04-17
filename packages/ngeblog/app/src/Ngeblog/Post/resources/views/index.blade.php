@@ -63,7 +63,7 @@
                     @endphp
 
                     @foreach ($tags as $tag)
-                        <a href="{{ route('tags.posts.show', ['tag' => $tag->tag_id]) }}" class="py-1 px-4 mx-2 my-1 border-2 hover:border-gray-300 hover:cursor-pointer">{{ $tag->name }}</a>
+                        <a href="{{ route('tags.posts.show', ['tag' => $tag]) }}" class="py-1 px-4 mx-2 my-1 border-2 hover:border-gray-300 hover:cursor-pointer">{{ $tag->name }}</a>
                     @endforeach
                 </div>
             </div>
