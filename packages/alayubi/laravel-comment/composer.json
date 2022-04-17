@@ -4,7 +4,10 @@
     "autoload": {
         "psr-4": {
             "Lara\\Comment\\": "src/"
-        }
+        },
+        "files": [
+            "src/helpers.php"
+        ]
     },
     "authors": [
         {

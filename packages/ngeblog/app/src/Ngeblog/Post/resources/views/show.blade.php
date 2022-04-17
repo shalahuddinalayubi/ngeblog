@@ -37,7 +37,7 @@
             </article>
 
             @auth    
-                <form action="{{ route('posts.comments.store', ['post' => $post]) }}" method="POST" class="w-full py-3">
+                <form action="{{ route('posts.comments.store', ['post' => $post]) }}" method="POST" class="w-full py-3" @error('comment') id="validation-comment-fails" @enderror>
                     @csrf
 
                     <div class="flex py-2">
@@ -62,7 +62,9 @@
                 </form>
             @endauth
 
-            @commentsIndex(['commentable' => $post])
+            {{-- @commentsIndex(['commentable' => $post]) --}}
+
+            @include('comment::comment-list', ['commentable' => $post])
         </div>
     </div>
 @endsection

@@ -3,8 +3,9 @@
 namespace Lara\Comment;
 
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
-use Illuminate\Support\Facades\Validator;
+use Illuminate\Http\Request;
 use Lara\Comment\Contracts\IsCommentable;
+use Lara\Comment\Contracts\IsCommentator;
 use Lara\Comment\Exceptions\MustCommentableException;
 
 class CommentService
@@ -26,10 +27,16 @@ class CommentService
      */
     protected $commentator;
 
-    public function __construct($commentable, $request)
+    /**
+     * @var bool
+     */
+    protected $validateWithBag = false;
+
+    public function __construct($commentable, $commentator, ?Request $request = null)
     {
         $this->setCommentable($commentable);
-        $this->request = $request;
+        $this->setCommentator($commentator);
+        $this->request = $request ?? app(Request::class);
     }
 
     /**
@@ -53,12 +60,13 @@ class CommentService
      * Create new instace.
      * 
      * @param \Illuminate\Database\Eloquent\Model
+     * @param \Illuminate\Database\Eloquent\Model
      * @param \Illuminate\Http\Request
      * @return this
      */
-    public static function for($commentable, $request)
+    public static function for($commentable, $commentator, ?Request $request = null)
     {
-        return (new self($commentable, $request));
+        return (new self($commentable, $commentator, $request));
     }
 
     /**
@@ -67,24 +75,15 @@ class CommentService
      * @param \Illuminate\Database\Eloquent\Model
      * @return this
      */
-    public function setCommentator($commentator)
+    public function setCommentator(\Illuminate\Database\Eloquent\Model $commentator)
     {
+        if (!$commentator instanceof IsCommentator) {
+            throw new \Exception('The model should implements \Lara\Comment\Contracts\IsCommentator interface');
+        }
+
         $this->commentator = $commentator;
 
         return $this;
-    }
-
-    /**
-     * Get the comment data.
-     * 
-     * @return array
-     */
-    public function getData()
-    {
-        return [
-            'user_id' => $this->commentator->id,
-            'comment' => $this->request->get('comment'),
-        ];
     }
 
     /**
@@ -94,12 +93,36 @@ class CommentService
      */
     public function validated()
     {
-        $validator = Validator::make($this->getData(), [
-            'user_id' => 'required',
-            'comment' => 'required',
-        ]);
+        $validator = config('comment.validator');
 
-        return $validator->validated();
+        $validator = new $validator($this->commentator, $this->request);
+
+        $validator = $validator->getValidator();
+
+        return $this->validateWithBag ? $validator->validateWithBag($this->errorBag()) : $validator->validated();
+    }
+
+    /**
+     * Run validation with error bag.
+     * 
+     * @param bool $validateWithBag
+     * @return this
+     */
+    public function validateWithBag($validateWithBag = true)
+    {
+        $this->validateWithBag = $validateWithBag;
+
+        return $this;
+    }
+
+    /**
+     * Make string error bag.
+     * 
+     * @return string
+     */
+    protected function errorBag()
+    {
+        return (string) $this->commentable->id . $this->request->method();
     }
 
     /**

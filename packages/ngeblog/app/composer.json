@@ -25,7 +25,8 @@
                 "Ngeblog\\Template\\TemplateServiceProvider",
                 "Ngeblog\\User\\UserServiceProvider",
                 "Ngeblog\\Post\\PostServiceProvider",
-                "Ngeblog\\Tag\\TagServiceProvider"
+                "Ngeblog\\Tag\\TagServiceProvider",
+                "Ngeblog\\Comment\\CommentServiceProvider"
             ]
         }
     }

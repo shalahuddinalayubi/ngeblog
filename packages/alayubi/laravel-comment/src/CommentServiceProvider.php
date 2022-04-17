@@ -13,9 +13,7 @@ class CommentServiceProvider extends ServiceProvider
      *
      * @var array
      */
-    protected $policies = [
-        Comment::class => CommentPolicy::class
-    ];
+    protected $policies = [];
 
     /**
      * Register services.
@@ -34,16 +32,42 @@ class CommentServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        // $this->loadViewsFrom(__DIR__.'/../resources/views', 'comment');
+
+        $this->mergeConfigFrom(__DIR__.'/../config/comment.php', 'comment');
+
+        $this->setPolicies();
+
+        if (config('comment.route')) {
+            Route::group(['middleware' => ['web']], function () {
+                $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
+            });
+        }
+
+        // Blade::include('comment::comments.index', 'commentsIndex');
+
+        $this->publishes([
+            __DIR__.'/../config/comment.php' => config_path('comment.php')
+        ], 'lara-comment-config');
+
+        $this->publishes([
+            __DIR__.'/../database/migrations/' => database_path('migrations')
+        ], 'lara-comment-migrations');
+
+        $this->publishes([
+            __DIR__.'/../resources/views/' => resource_path('views/vendor/comment'),
+            __DIR__.'/../resources/js/components/' => resource_path('js/components/comment'),
+        ], 'lara-comment-vue');
+
+        $this->publishes([
+            __DIR__.'/../resources/js/components/' => resource_path('js/components/comment')
+        ], 'lara-comment-components');
+    }
+
+    public function setPolicies()
+    {
+        $this->policies[config('comment.comment')] = config('comment.policy');
+
         $this->registerPolicies();
-        
-        $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
-
-        $this->loadViewsFrom(__DIR__.'/../resources/views', 'comment');
-
-        Route::group(['middleware' => ['web']], function () {
-            $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
-        });
-
-        Blade::include('comment::comments.index', 'commentsIndex');
     }
 }
