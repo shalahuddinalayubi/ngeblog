@@ -45,7 +45,7 @@
 
                         <div>
                             @foreach ($post->tags as $tag)
-                                <span class="py-1 px-2 my-1 inline-block border-2 rounded-lg text-xs">{{ $tag->name }}</span>
+                                <a href="{{ route('tags.posts.show', ['tag' => $tag]) }}" class="py-1 px-2 my-1 inline-block border-2 rounded-lg text-xs">{{ $tag->name }}</a>
                             @endforeach
                         </div>
 
@@ -55,7 +55,17 @@
             </div>
 
             <div class="flex flex-col md:items-center md:px-3 my-5 w-full lg:w-1/3">
-                @tag(['tags' => \Ngeblog\Post\Models\Post::mostUsedTags()])
+                <h1 class="font-bold text-3xl ml-2 md:ml-0">Popular Tag</h1>
+
+                <div class="flex flex-wrap mt-5 text-xs">
+                    @php
+                        $tags = \Ngeblog\Post\Models\Post::mostUsedTags()
+                    @endphp
+
+                    @foreach ($tags as $tag)
+                        <a href="{{ route('tags.posts.show', ['tag' => $tag->tag_id]) }}" class="py-1 px-4 mx-2 my-1 border-2 hover:border-gray-300 hover:cursor-pointer">{{ $tag->name }}</a>
+                    @endforeach
+                </div>
             </div>
         </div>
 
