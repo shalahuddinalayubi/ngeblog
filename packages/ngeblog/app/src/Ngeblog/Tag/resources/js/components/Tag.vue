@@ -1,6 +1,7 @@
 <template>
     <div>
         <multiselect
+            :class="{ 'is-danger': hasError }"
             v-model="value"
             :value="value"
             tag-placeholder="Add this as new tag"
@@ -34,13 +35,14 @@
             return {
                 isLoading: false,
                 value: [],
-                options: []
+                options: [],
             }
         },
 
         props: [
             'oldValue',
             'hasTags',
+            'hasError',
         ],
 
         created: function () {
@@ -82,3 +84,9 @@
 </script>
 
 <style src="vue-multiselect/dist/vue-multiselect.min.css"></style>
+<style>
+.is-danger .multiselect__tags {
+    --tw-border-opacity: 1;
+    border-color: rgb(239 68 68 / var(--tw-border-opacity));
+}
+</style>

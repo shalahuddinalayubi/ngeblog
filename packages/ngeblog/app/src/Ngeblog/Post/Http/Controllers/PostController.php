@@ -50,7 +50,7 @@ class PostController extends Controller
         $data = $request->validate([
                         'title' => 'required',
                         'content' => 'required',
-                        'tags.*' => '',
+                        'tags' => 'array|max:10',
                     ]);
 
         $data['user_id'] = Auth::id();
