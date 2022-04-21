@@ -6,59 +6,22 @@
                 <a href="{{ route('register') }}" class="block px-5 py-2 mr-2 rounded-lg bg-blue-500 hover:bg-blue-700 text-white">Register</a>
             @endguest
 
-            @auth    
-                <div class="flex justify-center">
-                    <div x-data="{ dropdownOpen: false }" class="relative">
-                        <button @click="dropdownOpen = !dropdownOpen" class="block px-5 py-2 mr-2 rounded-lg bg-blue-500 hover:bg-blue-700 text-white">
-                            Account
-                        </button>
-
-                        <div x-show="dropdownOpen" @click="dropdownOpen = false" class="fixed inset-0 h-full w-full z-10">
-                        </div>
-
-                        <div x-show="dropdownOpen" class="absolute left-0 mt-2 py-2 w-48 bg-white rounded-md shadow-xl z-20">
-                            <a href="{{ route('profile.edit') }}" class="block px-4 py-2 text-sm capitalize text-gray-700 hover:bg-blue-500 hover:text-white">
-                                Update Profile
-                            </a>
-
-                            <a href="{{ route('password.edit') }}" class="block px-4 py-2 text-sm capitalize text-gray-700 hover:bg-blue-500 hover:text-white">
-                                Change Password
-                            </a>
-
-                            <form method="POST" action="{{ route('logout') }}">
-                                @csrf
-                                <button type="submit" class="block w-full text-left px-4 py-2 text-sm capitalize text-gray-700 hover:bg-blue-500 hover:text-white">Logout</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
+            @auth
+                <the-navbar-dropdown-account
+                    update-profile="{{ route('profile.edit') }}"
+                    change-password="{{ route('password.edit') }}"
+                    logout="{{ route('logout') }}"
+                >
+                </the-navbar-dropdown-account>
             @endauth
 
-            @auth    
-                <div class="flex justify-center">
-                    <div x-data="{ dropdownOpen: false }" class="relative">
-                        <button @click="dropdownOpen = !dropdownOpen" class="block px-5 py-2 mr-2 rounded-lg bg-blue-500 hover:bg-blue-700 text-white">
-                            Post
-                        </button>
-
-                        <div x-show="dropdownOpen" @click="dropdownOpen = false" class="fixed inset-0 h-full w-full z-10">
-                        </div>
-
-                        <div x-show="dropdownOpen" class="absolute left-0 mt-2 py-2 w-48 bg-white rounded-md shadow-xl z-20">
-                            <a href="{{ url('/') }}" class="block px-4 py-2 text-sm capitalize text-gray-700 hover:bg-blue-500 hover:text-white">
-                                All Post
-                            </a>
-
-                            <a href="{{ route('posts.index', ['filter[user_id]' => Auth::id()]) }}" class="block px-4 py-2 text-sm capitalize text-gray-700 hover:bg-blue-500 hover:text-white">
-                                My Post
-                            </a>
-
-                            <a href="{{ route('posts.create') }}" class="block px-4 py-2 text-sm capitalize text-gray-700 hover:bg-blue-500 hover:text-white">
-                                Create Post
-                            </a>
-                        </div>
-                    </div>
-                </div>
+            @auth
+                <the-navbar-dropdown-post
+                    posts-index={{ route('posts.index') }}
+                    posts-auth-index={{ route('posts.index', ['filter[user_id]' => Auth::id()]) }}
+                    posts-create={{ route('posts.create') }}
+                >
+                </the-navbar-dropdown-post>
             @endauth
         </div>
 

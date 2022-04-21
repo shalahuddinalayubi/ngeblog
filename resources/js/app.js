@@ -1,9 +1,4 @@
-import Alpine from 'alpinejs'
 import Vue from 'vue';
-
-window.Alpine = Alpine
-
-Alpine.start()
 
 /**
  * First we will load all of this project's JavaScript dependencies which
@@ -31,6 +26,9 @@ Vue.component('tag', require('./components/Tag.vue').default);
 
 Vue.component('reply-comment', require('./../../packages/alayubi/laravel-comment/resources/js/components/ReplyComment.vue').default)
 Vue.component('edit-comment', require('./../../packages/alayubi/laravel-comment/resources/js/components/EditComment.vue').default)
+
+Vue.component('the-navbar-dropdown-account', require('./../../packages/ngeblog/app/src/Ngeblog/Template/resources/js/components/TheNavbarDropdownAccount.vue').default)
+Vue.component('the-navbar-dropdown-post', require('./../../packages/ngeblog/app/src/Ngeblog/Template/resources/js/components/TheNavbarDropdownPost.vue').default)
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
