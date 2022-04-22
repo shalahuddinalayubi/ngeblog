@@ -91,7 +91,7 @@ trait HasTags
     {
         $taggableType = (new self)->tags()->getMorphClass();
 
-        return DB::table('tags')
+        $tags = DB::table('tags')
                 ->rightJoin('taggables', 'tags.id', '=', 'taggables.tag_id')
                 ->select('taggables.tag_id as tag_id', 'tags.name', DB::raw('count(taggables.tag_id) as number'))
                 ->where('taggable_type', '=', $taggableType)
@@ -100,5 +100,7 @@ trait HasTags
                 ->orderBy('number', 'desc')
                 ->take($limit)
                 ->get();
+        
+        return \Lara\Tag\Tag::hydrate($tags->all());
     }
 }

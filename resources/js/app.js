@@ -27,7 +27,7 @@ window.Vue = require('vue').default;
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 // Vue.component('example-component', require('./components/ExampleComponent.vue').default);
-Vue.component('tag', require('./components/Tag.vue').default);
+Vue.component('tag', require('./../../packages/ngeblog/app/src/Ngeblog/Tag/resources/js/components/Tag.vue').default);
 
 Vue.component('reply-comment', require('./../../packages/alayubi/laravel-comment/resources/js/components/ReplyComment.vue').default)
 Vue.component('edit-comment', require('./../../packages/alayubi/laravel-comment/resources/js/components/EditComment.vue').default)

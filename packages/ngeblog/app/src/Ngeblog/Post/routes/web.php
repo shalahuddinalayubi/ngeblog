@@ -14,3 +14,5 @@ Route::get('/', [\Ngeblog\Post\Http\Controllers\PostController::class, 'index'])
 
 Route::post('/posts/{post}/comments', [\Ngeblog\Post\Http\Controllers\CommentController::class, 'store'])->name('posts.comments.store')->middleware('auth');
 Route::get('/posts/{post}/comments', [\Ngeblog\Post\Http\Controllers\CommentController::class, 'store'])->name('posts.comments.store')->middleware('auth');
+
+Route::get('/tags/{tag:name}/posts', [\Ngeblog\Post\Http\Controllers\TagController::class, 'show'])->name('tags.posts.show');
