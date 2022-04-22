@@ -32,7 +32,7 @@
                 @enderror
             </div>
 
-            <div class="flex flex-col py-2" id="app">
+            <div class="flex flex-col py-2">
                 <label for="content">Tag</label>
                 <tag
                     :old-value="{{ json_encode(old('tags')) }}"
